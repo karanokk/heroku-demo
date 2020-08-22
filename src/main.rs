@@ -12,7 +12,7 @@ fn root(name: &RawStr) -> &str {
 
 fn main() {
     rocket::ignite()
-        .mount("/public", StaticFiles::from(concat!(env!("CARGO_MANIFEST_DIR"), "/static")))
+        .mount("/public", StaticFiles::from("./static"))
         .mount("/", routes![root])
         .launch();
 }
